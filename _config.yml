@@ -1,6 +1,7 @@
 title: "Frank's Ramblings"
 author: "Frank Liu"
 description: "Ramblings of a multilingual AI tech lead" # This will show up in places like twitter, linkedin, etc, if you share your sites url as a post.
+url: https://frankzliu.com
 
 # Email / Social media user names used by the minima theme:
 # All of these are optional and can be removed or commented out
@@ -40,3 +41,5 @@ defaults:
       type: post
     values:
       tags: Other
+
+google_analytics: 1
