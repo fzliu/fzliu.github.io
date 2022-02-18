@@ -1,12 +1,15 @@
-## My Experience Working and Living in China: Part I
-
+---
+layout: post
+title: "My Experience Working and Living in China: Part I"
+description: "An overview of living and working in China."
+tags: China
 ---
 
 _In this four-part article, I’ll go over some of the lessons I learned living and doing business in China’s tech industry. During my time in China, I’ve led a team of 10+ engineers to develop a location-based IoT and sensing platform, co-founded an open-source project called [Towhee](https://github.com/towhee-io/towhee) (give us a star if you like it_ 😊_), and developed countless relationships with folks in a number of difference cities (many of whom I now consider good friends). I’ll go over some of the common misconceptions about China ranging from living and working in China to 996’ing in the tech industry to the government’s pandemic response._
 
 _Part I of this blog post covers some of the basics without diving too deep into the tech world: some things I learned while living, working, and interacting in China. If you have any questions, comments, or concerns, feel free to connect with me on [Twitter](https://twitter.com/frankzliu) or [Linkedin](https://www.linkedin.com/in/fzliu/). Thanks for reading!_
 
----
+----
 
 Before I begin, a bit about me. I was born in Nanjing, China, but moved to the US when I was barely three years old. I spent about five years in New Jersey before moving to Corvallis, Oregon (a place that I am, to this day, proud to call home). I moved to Norcal for college, studying EE (with a minor in CS) at Stanford. I stayed there for my Master’s degree as well, which I completed in 2014. Afterwards, I worked at Yahoo’s San Francisco office as a Machine Learning Engineer for two years. As a hybrid software development & research role, I was able to research and productionize the industry’s first deep learning-based model for scoring images based on aesthetics. I also had the pleasure of attending Yahoo’s internal TechPulse conference (where my co-author and I won a best paper award) all while keeping up with [interesting deep learning uses cases](https://github.com/fzliu/style-transfer). All-in-all, I was quite happy with the work I was doing, but also slowly started to develop the entrepreneurship itch.
 
