@@ -2,7 +2,7 @@
 layout: post
 title: "My Experience Working and Living in China: Part I"
 description: "An overview of living and working in China."
-tags: China
+tags: china
 ---
 
 _In this four-part article, I’ll go over some of the lessons I learned living and doing business in China’s tech industry. During my time in China, I’ve led a team of 10+ engineers to develop a location-based IoT and sensing platform, co-founded an open-source project called [Towhee](https://github.com/towhee-io/towhee) (give us a star if you like it_ 😊_), and developed countless relationships with folks in a number of difference cities (many of whom I now consider good friends). I’ll go over some of the common misconceptions about China ranging from living and working in China to 996’ing in the tech industry to the government’s pandemic response._
@@ -54,7 +54,7 @@ Some provincial (the equivalent of a state in America) governments have issued n
 
 The same goes for pretty much all processes which require some sort of government approval, including but not limited to acquiring a work permit, registering an address change, and replacing a lost ID card. Even flying to China requires a mountain of [paperwork and approvals](http://www.chinaconsulatesf.org/eng/zytz/202201/t20220109_10480334.htm), even if you already have a Chinese visa. My main problem with all this is the CPC's complete lack of transparency. Why can't I transit through a third country on my way to China if I'm going to have to undergo 14 days of mandatory hotel quarantine plus another 7 days of home quarantine anyway? From a foreigner's perspective, this is one of the most frustrating aspects of China in an otherwise amazing experience - CPC overreach in almost every aspect of everyday life. The CPC grossly mismanages via overregulation in some sectors and underregulation (hello, housing market) in others.
 
-#### Social regression and economic growth
+#### Economic growth, social regression
 
 This ties into another common misconception about China - the idea that the government wants to track everything you do at all hours of the day (for the moment, let’s ignore the feasibility of doing so for a population for 1.4 billion people) through a combination of CCTV, mobile phones, and browsing habits. I've read countless articles written by American and European media outlets overstating the [dystopia](https://en.wikipedia.org/wiki/Mass_surveillance_in_China) that China has fallen into, but the reality is that the Chinese government cares little for storing said data long-term and uses it primarily in criminal cases. I was involved in a project that uses face recognition to track residents going in and out of communities; not only were the residents eager to have such a system installed, but it eventually also helped track a man guilty of sexual assault. Data from such a system was also entirely managed at the local level and not automatically shared with the provincial or central governments.
 
