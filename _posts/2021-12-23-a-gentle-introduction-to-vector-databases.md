@@ -2,7 +2,9 @@
 layout: post
 title: "A Gentle Introduction to Vector Databases"
 description: "An introduction to vector databases for non-technical folks."
+categories: ["blog"]
 tags: machine-learning
+redirect_from: /2021/12/23/a_gentle_introduction_to_vector_databases.html
 ---
 
 _Update: This post has also been cross-published to the [Zilliz learning center](https://zilliz.com/learn) as well as on [Medium](https://milvusio.medium.com/what-are-vector-databases-8100178c5774)._

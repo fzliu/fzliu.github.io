@@ -30,6 +30,7 @@ kramdown:
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-redirect-from
 
 titles_from_headings:
   strip_title: true
@@ -41,5 +42,7 @@ defaults:
       type: post
     values:
       tags: Other
+
+permalink: /:categories/:title
 
 google_analytics: 1
