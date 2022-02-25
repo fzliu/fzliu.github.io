@@ -1,13 +1,17 @@
 ---
 layout: post
 title: "A Gentle Introduction to Vector Databases"
-description: "An introduction to vector databases for non-technical folks."
+description: "An introduction to the vector database: a new type of database purpose-built to for the machine learning era."
 categories: ["blog"]
 tags: machine-learning
 redirect_from: /2021/12/23/a_gentle_introduction_to_vector_databases.html
 ---
 
 _Update: This post has also been cross-published to the [Zilliz learning center](https://zilliz.com/learn) as well as on [Medium](https://milvusio.medium.com/what-are-vector-databases-8100178c5774)._
+
+_If you have any feedback, feel free to connect with me on [Twitter](https://twitter.com/frankzliu) or [Linkedin](https://www.linkedin.com/in/fzliu/). Thanks for reading!_
+
+----
 
 In this blog post, I'll introduce concepts related to the vector database, a new type of technology designed to store, manage, and search embedding vectors. Vector databases are being used in an increasingly large number of applications, including but not limited to image search, recommender system, text understanding, video summarization, drug discovery, stock market analysis, and much more.
 
@@ -22,7 +26,7 @@ Data is everywhere. In the early days of the internet, data was mostly structure
 | 0374332657 | 1998 | Holes                                | Louis Sachar  |
 | ...
 
-Storing and searching across table-based data such as the one shown above is exactly what relational databases were designed to do. In the example above, each row within the database respresents a particular book, while the columns correspond to a particular category of information. When a user looks up book(s) through an online service, they can do so through any of the column names present within the database. For example, querying over all results where the author name is Bill Bryson returns all of Bryson's books.
+Storing and searching across table-based data such as the one shown above is exactly what relational databases were designed to do. In the example above, each row within the database represents a particular book, while the columns correspond to a particular category of information. When a user looks up book(s) through an online service, they can do so through any of the column names present within the database. For example, querying over all results where the author name is Bill Bryson returns all of Bryson's books.
 
 As the internet grew and evolved, unstructured data (magazine articles, shared photos, short videos, etc.) became increasingly common. Unlike structured data, there is no easy way to store the contents of unstructured data within a relational database. Imagine, for example, trying to search for similar shoes given a collection of shoe pictures from various angles; this would be impossible in a relational database since understanding shoe style, size, color, etc... purely from the image's raw pixel values is impossible.
 
@@ -115,13 +119,13 @@ print(model.most_similar(positive=['fruit'], topn=10)[9:])
 
 *<sub>Early computer vision and image processing relied on local feature descriptors to turn an image into a “bag” of embedding vectors – one vector for each detected keypoint. [SIFT](https://www.cs.ubc.ca/~lowe/papers/ijcv04.pdf), [SURF](https://people.ee.ethz.ch/~surf/eccv06.pdf), and [ORB](http://www.gwylab.com/download/ORB_2012.pdf) are three well-known feature descriptors you may have heard of. These feature descriptors, while useful for matching images with one another, proved to be a fairly poor way to represent audio (via spectrograms) and images.</sub>
 
-#### Generating embeddings with Towhee
+#### Generating embeddings with [Towhee](https://towhee.io)
 
-Vector embeddings are not just limited to natural language. In the example below, we use the [`towhee`](https://towhee.io) library to generate embedding vectors for three different images, two of which have similar content:
+Vector embeddings are not just limited to natural language. In the example below, let's generate embedding vectors for three different images, two of which have similar content:
 
 __Prep work__
 
-For this example, we'll be using `towhee`, a framework for developing and running pipelines which include deep learning models (built on top of PyTorch and Tensorflow). We'll also download three images from the YFCC100M dataset to test our embeddings on.
+For this example, we'll be using [`towhee`](https://towhee.io), a framework for developing and running pipelines which include deep learning models (built on top of PyTorch and Tensorflow). We'll also download three images from the YFCC100M dataset to test our embeddings on.
 
 
 ```shell
@@ -136,7 +140,6 @@ For this example, we'll be using `towhee`, a framework for developing and runnin
     Requirement already satisfied: charset-normalizer~=2.0.0 in /Users/fzliu/.pyenv/lib/python3.8/site-packages (from requests>=2.12.5->towhee) (2.0.6)
     Requirement already satisfied: idna<4,>=2.5 in /Users/fzliu/.pyenv/lib/python3.8/site-packages (from requests>=2.12.5->towhee) (3.2)
     Requirement already satisfied: certifi>=2017.4.17 in /Users/fzliu/.pyenv/lib/python3.8/site-packages (from requests>=2.12.5->towhee) (2021.5.30)
-    --2022-02-22 00:07:15--  https://farm6.staticflickr.com/5012/5493808033_eb1dfcd98f_q.jpg
 
 
 __Generating embeddings__
@@ -184,7 +187,7 @@ Towhee has a number of [other embedding generation pipelines](https://towhee.io/
 
 Now that we’ve seen the representational power of vector embeddings, let’s take a bit of time to briefly discuss indexing the vectors. Like relational databases, vector databases need to be searchable in order to be truly useful — just storing the vector and its associated metadata is not enough. This is called nearest neighbor search, or NN search for short, and alone can be considered a subfield of machine learning and pattern recognition due to the sheer number of solutions proposed.
 
-Vector search is generally split into two components — the similarity metric and the index. The similarity metric defines how the distance between two vectors is evaluated, while the index is a data structure that facilitates the search process. Similarity metrics are fairly straightforward — the most common similarity metric is the inverse of the L2 norm (also known as Euclidean distance). On the other hand, a diverse set of indices exist, each of which has its own set of advantages and disadvantages. We won’t go into the details of vector indices here (that’s a topic for another article), just know that, without them, a single query vector would need to be compared with all other vectors in the database, making the query process excruciatingly long.
+Vector search is generally split into two components - the similarity metric and the index. The similarity metric defines how the distance between two vectors is evaluated, while the index is a data structure that facilitates the search process. Similarity metrics are fairly straightforward; the most common similarity metric is the inverse of the L2 norm (also known as Euclidean distance). On the other hand, a diverse set of indices exist, each of which has its own set of advantages and disadvantages. We won’t go into the details of vector indices here (that’s a topic for another article), just know that, without them, a single query vector would need to be compared with all other vectors in the database, making the query process excruciatingly long.
 
 #### Putting It All Together
 
@@ -204,6 +207,4 @@ With data being generated at unprecedented rates, making sense of all the data t
 
 Here's [a great comparison](https://farfetchtechblog.com/en/blog/post/powering-ai-with-vector-databases-a-benchmark-part-i/) between [Milvus](https://milvus.io) and [Weaviate](https://weaviate.io) (tldr: Milvus is better). Furthermore, if you're interested in generating embeddings across your own data, or are interested to see other [cool machine learning pipelines](https://towhee.io/towhee/anime-transfer), I recommend checking out the [Towhee](https://towhee.io) open-source project.
 
-That's all folks - hope this post was informative. If you have any questions, comments, or concerns, feel free to leave a comment below, or connect with me on [Twitter](https://twitter.com/frankzliu) or [LinkedIn](https://linkedin.com/in/fzliu).
-
-Stay tuned for more!
+That's all folks - hope this post was informative. If you have any questions, comments, or concerns, feel free to leave a comment below. Stay tuned for more!
