@@ -15,7 +15,7 @@ __tl;dr__: _My landlord insisted on a wet signature for our signed lease. I didn
 I recently moved into a new place - with this, I had the immense pleasure of signing a new lease. Initially, I scribbled a digital signature on the lease document using my trackpad and sent it my soon-to-be landlord. It looked fairly blocky and like it was sketched out using a computer mouse, but it could still easily be matched to my "actual" pen-and-paper signature. A day later, I had this conversation with him:
 
 - __landlord__: _hi Frank, please send me a signed and scanned copy of your lease agreement_
-- __me__: _hey <redacted>, I already signed it and sent it to your email_
+- __me__: _hey REDACTED, I already signed it and sent it to your email_
 - __landlord__: _the copy that you sent me does not look signed with a pen_
 - __me__: _correct, I signed it digitally_
 - __landlord__: _this type of signature is unacceptable for me_
@@ -31,7 +31,7 @@ The honest truth is that I did have access to a printer and scanner (in the [Zil
 
 __Uploading a hand-written signature__
 
-The first step was to create a hand-written signature that looked like it was scanned and uploaded. For this, I first put pen to paper and took a close-up picture of my "signature". I then pre-downsized this image using Imagemagick:
+The first step was to create a hand-written signature that looked like it was scanned and uploaded. For this, I first put pen to paper and took a close-up picture of my "signature". I then downsized this image using Imagemagick[https://imagemagick.org]. This step is important, as it aligns the size of the signature with the size of the eventual scanned document.
 
 ```shell
 $ mogrify -resize 720x720> -path signature.jpg
