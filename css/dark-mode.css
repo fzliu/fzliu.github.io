@@ -1,35 +1,43 @@
-html, html[data-theme="light"] {
-  --link-color: rgb(0, 112, 201);
-  --main-background-color: hsl(0, 0%, 90%);
-  --main-text-color: hsl(0, 0%, 20%);
-}
 
-html[data-theme="dark"] {
-  --link-color: rgb(100, 210, 255);
-  --main-background-color: hsl(0, 0%, 20%);
-  --main-text-color: hsl(0, 0%, 85%);
+html {
+  --body-background-color: hsl(0, 0%, 90%);
+  --body-text-color: hsl(0, 0%, 20%);
+  --link-color: rgb(0, 110, 200);
+  --header-text-color: hsl(0, 0%, 40%);
+  --secondary-background-color: hsl(0, 0%, 100%);
 }
-
 
 @media (prefers-color-scheme: dark) {
-  html, html[data-theme="dark"] {
+  html {
+    --body-background-color: hsl(0, 0%, 20%);
+    --body-text-color: hsl(0, 0%, 80%);
     --link-color: rgb(100, 210, 255);
-    --main-background-color: hsl(0, 0%, 20%);
-    --main-text-color: hsl(0, 0%, 85%);
-  }
-
-  html[data-theme="light"] {
-    --link-color: rgb(0, 112, 201);
-    --main-background-color: hsl(0, 0%, 90%);
-    --main-text-color: hsl(0, 0%, 20%);
+    --header-text-color: hsl(0, 0%, 60%);
+    --secondary-background-color: hsl(0, 0%, 30%);
   }
 }
 
 body {
-  background-color: var(--main-background-color);
-  color: var(--main-text-color);
+  background-color: var(--body-background-color);
+  color: var(--body-text-color);
+}
+
+table {
+  color: var(--body-text-color);
+}
+
+table tr:nth-child(even) {
+  background-color: var(--secondary-background-color);
 }
 
 a {
   color: var(--link-color);
+}
+
+.site-title, .site-title:visited {
+  color: var(--header-text-color);
+}
+
+.site-nav .page-link {
+  color: var(--header-text-color);
 }

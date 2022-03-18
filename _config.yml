@@ -5,7 +5,6 @@ url: https://frankzliu.com
 
 # Email / Social media user names used by the minima theme:
 # All of these are optional and can be removed or commented out
-email: "frank@frankzliu.com"
 twitter_username: "frankzliu"
 github_username: "fzliu"
 linkedin_username: "fzliu"
@@ -27,8 +26,10 @@ kramdown:
 
 plugins:
   - jekyll-feed
-  - jekyll-sitemap
+  - jekyll-include-cache
+  - jekyll-remote-theme
   - jekyll-redirect-from
+  - jekyll-sitemap
 
 titles_from_headings:
   strip_title: true

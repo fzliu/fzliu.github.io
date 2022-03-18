@@ -41,10 +41,10 @@ __Some prep work__
 Before beginning, we'll need to install the gensim library and load a Word2Vec model.
 
 
-```python
-!pip install gensim --disable-pip-version-check
-!wget https://s3.amazonaws.com/dl4j-distribution/GoogleNews-vectors-negative300.bin.gz
-!gunzip GoogleNews-vectors-negative300.bin
+```shell
+% pip install gensim --disable-pip-version-check
+% wget https://s3.amazonaws.com/dl4j-distribution/GoogleNews-vectors-negative300.bin.gz
+% gunzip GoogleNews-vectors-negative300.bin
 ```
 
     Requirement already satisfied: gensim in /Users/fzliu/.pyenv/lib/python3.8/site-packages (4.1.2)
@@ -69,8 +69,8 @@ Now that we've done all the prep work required to generate word-to-vector embedd
 
 
 ```python
-from gensim.models import KeyedVectors
-model = KeyedVectors.load_word2vec_format('GoogleNews-vectors-negative300.bin', binary=True)
+>>> from gensim.models import KeyedVectors
+>>> model = KeyedVectors.load_word2vec_format('GoogleNews-vectors-negative300.bin', binary=True)
 ```
 
 __Example 0: Marlon Brando__
@@ -79,7 +79,7 @@ Let's take a look at how Word2Vec interprets the famous actor Marlon Brando.
 
 
 ```python
-print(model.most_similar(positive=['Marlon_Brando']))
+>>> print(model.most_similar(positive=['Marlon_Brando']))
 ```
 
     [('Brando', 0.757453978061676), ('Humphrey_Bogart', 0.6143958568572998), ('actor_Marlon_Brando', 0.6016287207603455), ('Al_Pacino', 0.5675410032272339), ('Elia_Kazan', 0.5594002604484558), ('Steve_McQueen', 0.5539456605911255), ('Marilyn_Monroe', 0.5512186884880066), ('Jack_Nicholson', 0.5440199375152588), ('Shelley_Winters', 0.5432392954826355), ('Apocalypse_Now', 0.5306933522224426)]
@@ -93,7 +93,7 @@ Vectors can be added and subtracted from each other to demo underlying semantic 
 
 
 ```python
-print(model.most_similar(positive=['king', 'woman'], negative=['man'], topn=1))
+>>> print(model.most_similar(positive=['king', 'woman'], negative=['man'], topn=1))
 ```
 
     [('queen', 0.7118193507194519)]
@@ -107,8 +107,8 @@ The word "apple" can refer to both the company as well as the delicious red frui
 
 
 ```python
-print(model.most_similar(positive=['samsung', 'iphone'], negative=['apple'], topn=1))
-print(model.most_similar(positive=['fruit'], topn=10)[9:])
+>>> print(model.most_similar(positive=['samsung', 'iphone'], negative=['apple'], topn=1))
+>>> print(model.most_similar(positive=['fruit'], topn=10)[9:])
 ```
 
     [('droid_x', 0.6324754953384399)]
@@ -125,7 +125,7 @@ Vector embeddings are not just limited to natural language. In the example below
 
 __Prep work__
 
-For this example, we'll be using [`towhee`](https://towhee.io), a framework for developing and running pipelines which include deep learning models (built on top of PyTorch and Tensorflow). We'll also download three images from the YFCC100M dataset to test our embeddings on.
+For this example, we'll be using [Towhee](https://towhee.io), a framework for developing and running pipelines which include deep learning models (built on top of PyTorch and Tensorflow). We'll also download three images from the YFCC100M dataset to test our embeddings on.
 
 
 ```shell
@@ -152,20 +152,20 @@ Now let's use `towhee` to generate embeddings for the test images below. The fir
 
 
 ```python
-from towhee import pipeline
-p = pipeline('image-embedding')
-dog0_vec = p('https://farm6.staticflickr.com/5012/5493808033_eb1dfcd98f_q.jpg')
-dog1_vec = p('https://farm1.staticflickr.com/29/60515385_198df3b357_q.jpg')
-car_vec = p('https://farm2.staticflickr.com/1171/1088524379_7a150cef81_q.jpg')
+>>> from towhee import pipeline
+>>> p = pipeline('image-embedding')
+>>> dog0_vec = p('https://farm6.staticflickr.com/5012/5493808033_eb1dfcd98f_q.jpg')
+>>> dog1_vec = p('https://farm1.staticflickr.com/29/60515385_198df3b357_q.jpg')
+>>> car_vec = p('https://farm2.staticflickr.com/1171/1088524379_7a150cef81_q.jpg')
 ```
 
 __Normalize the resulting vector__
 
 ```python
-import numpy as np
-dog0_vec = dog0_vec / np.linalg.norm(dog0_vec)
-dog1_vec = dog1_vec / np.linalg.norm(dog1_vec)
-car_vec = car_vec / np.linalg.norm(car_vec)
+>>> import numpy as np
+>>> dog0_vec = dog0_vec / np.linalg.norm(dog0_vec)
+>>> dog1_vec = dog1_vec / np.linalg.norm(dog1_vec)
+>>> car_vec = car_vec / np.linalg.norm(car_vec)
 ```
 
 __Now let's compute distances__
@@ -173,9 +173,9 @@ __Now let's compute distances__
 With the normalized vectors in place, we can now compute an inverted similarity metric using the Euclidean distance between vectors (lower = more similar).
 
 ```python
-import numpy as np
-print('dog0 to dog1 distance:', np.linalg.norm(dog0_vec - dog1_vec))
-print('dog0 to car distance:', np.linalg.norm(dog0_vec - car_vec))
+>>> import numpy as np
+>>> print('dog0 to dog1 distance:', np.linalg.norm(dog0_vec - dog1_vec))
+>>> print('dog0 to car distance:', np.linalg.norm(dog0_vec - car_vec))
 ```
 
     dog0 to dog1 distance: 0.80871606
