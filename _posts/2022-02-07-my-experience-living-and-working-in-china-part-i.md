@@ -7,7 +7,7 @@ tags: china
 redirect_from: /2022/02/07/my_experience_living_and_working_in_china_part_i.html
 ---
 
-_In this four-part article, I’ll go over some of the lessons I learned living and doing business in China’s tech industry. During my time in China, I’ve led a team of 10+ engineers to develop a location-based IoT and sensing platform, co-founded an open-source project called [Towhee](https://github.com/towhee-io/towhee) (please consider giving it a star_ 😊_), and developed countless relationships with folks in a number of difference cities (many of whom I now consider good friends). I’ll go over some of the common misconceptions about China ranging from living and working in China to the government’s pandemic response._
+_In this four-part article, I’ll go over some of the lessons I learned living and doing business in China’s tech industry. During my time in China, I’ve led a team of 10+ engineers to develop a location-based IoT and sensing platform, co-founded an open-source project called [Towhee](https://github.com/towhee-io/towhee), and developed countless relationships with folks in a number of difference cities (many of whom I now consider good friends). I’ll go over some of the common misconceptions about China ranging from living and working in China to the government’s pandemic response._
 
 _Part I of this blog post covers some of the basics without diving too deep into the tech world: some interesting things I learned while living, working, and interacting in China. If you have any questions, comments, or concerns, feel free to connect with me on [Twitter](https://twitter.com/frankzliu) or [Linkedin](https://www.linkedin.com/in/fzliu/). Thanks for reading!_
 
@@ -87,6 +87,8 @@ I strongly dislike the CPC, but have immense love for Chinese people and Chinese
 
 Entire dissertations could be dedicated to each of the above sections, but I wanted to highlight misconceptions and some other bits of information that might not be as readily accessible. In particular, the previous section is by no means a comprehensive list of social issues that China is facing, but rather a brief summary of things that might not be too well understood in the West. #MeToo<sup>2</sup>, a declining natural birth rate, and racial divisions are just a small number of similar/parallel issues that are happening in both America and China.
 
-If you made it this far, thanks for reading. This post has been a bit rambly and all over the place, but the next couple should hopefully be a bit more focused. In part II, I’ll cover the Chinese tech scene, from 996'ing to the open source community. Stay tuned!
+If you made it this far, thanks for reading. This post has been a bit rambly and all over the place, but the next couple should hopefully be a bit more focused. If you liked this article and are an open-source developer like myself, please give the [Towhee project](https://github.com/towhee-io/towhee) a star on Github as a show of support.
+
+In part II, I’ll cover the Chinese tech scene, from 996'ing to the open source community. Stay tuned!
 
 <sup>2</sup><sub>Justice for [Zhou Xiaoxuan](https://www.cnn.com/2021/09/15/china/xianzi-zhu-jun-sexual-harassment-case-mic-intl-hnk/index.html).</sub>
