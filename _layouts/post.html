@@ -11,7 +11,7 @@ layout: default
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         {{ page.date | date: date_format }}
       </time>
-      {% assign author = page.author | default: site.author %}
+      {% assign author = page.author.name | default: site.author.name %}
       {%- if author -%}
         • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ author }}</span></span>
       {%- endif -%}</p>
@@ -23,6 +23,8 @@ layout: default
 
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
+    {% capture supporting-me %}{% include supporting-me.md %}{% endcapture %}
+    {{ supporting-me | markdownify }}
     {% include navlinks.html %}
   </div>
 

@@ -5,3 +5,7 @@ Computer button presser extraordinaire working on everything from [software-defi
 Welcome to my blog!
 
 {% include supporting-me.md %}
+
+---
+
+### Recent posts
