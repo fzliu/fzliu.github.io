@@ -3,33 +3,45 @@ author: "Frank Liu"
 description: "Ramblings of a multilingual AI tech lead" # This will show up in places like twitter, linkedin, etc, if you share your sites url as a post.
 url: https://frankzliu.com
 
-# Email / Social media user names used by the minima theme:
-# All of these are optional and can be removed or commented out
-twitter_username: "frankzliu"
-github_username: "fzliu"
-linkedin_username: "fzliu"
-#facebook_username: username
-#flickr_username: username
-#instagram_username: username
-#pinterest_username: username
-#youtube_username: username
-#googleplus_username: +username
+show_excerpts: false # set to true to show excerpts on the homepage
 
-#########################################################################################
-######### Nothing below needs to be changed (unless you know what you're doing) #########
-#########################################################################################
-theme: "minima"
+title: Frank's Ramblings
+author:
+  name: Frank Liu
+description: > # this means to ignore newlines until "show_excerpts:"
+  Ramblings of a multilingual AI tech lead.
+show_excerpts: false # set to true to show excerpts on the homepage
 
-kramdown:
-  syntax_highlighter_opts:
-    disable: true
+# Minima date format
+# refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
+minima:
+  #date_format: "%b %-d, %Y"
+
+  # generate social links in footer
+  social_links:
+    twitter: frankzliu
+    github: fzliu
+    linkedin: fzliu
+
+# If you want to link only specific pages in your header, uncomment
+# this and add the path to the pages in order as they should show up
+#header_pages:
+# - about.md
+
+#theme: "minima"
+remote_theme: jekyll/minima
 
 plugins:
   - jekyll-feed
   - jekyll-include-cache
   - jekyll-remote-theme
   - jekyll-redirect-from
+  - jekyll-seo-tag
   - jekyll-sitemap
+
+kramdown:
+  syntax_highlighter_opts:
+    disable: true
 
 titles_from_headings:
   strip_title: true
