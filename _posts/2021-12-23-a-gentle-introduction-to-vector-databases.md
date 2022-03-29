@@ -30,9 +30,20 @@ Storing and searching across table-based data such as the one shown above is exa
 
 As the internet grew and evolved, unstructured data (magazine articles, shared photos, short videos, etc.) became increasingly common. Unlike structured data, there is no easy way to store the contents of unstructured data within a relational database. Imagine, for example, trying to search for similar shoes given a collection of shoe pictures from various angles; this would be impossible in a relational database since understanding shoe style, size, color, etc... purely from the image's raw pixel values is impossible.
 
-This brings us to vector databases. The increasing ubiquity of unstructured data has led to a steady rise in the use of machine learning models trained to understand such data. `word2vec`, a natural language processing (NLP) algorithm which uses a neural network to learn word associations, is a well-known early example of this. The `word2vec` model is capable of turning single words (in a variety of languages, not just English) into a list of floating point values, or vectors. Due to the way the machine learning model is trained, vectors which are close to each other represent words which are similar to each other, hence the term _embedding vectors_. We'll get into a bit more detail (with code!) in the next section.
+This brings us to vector databases. The increasing ubiquity of unstructured data has led to a steady rise in the use of machine learning models trained to understand such data. `word2vec`, a natural language processing (NLP) algorithm which uses a neural network to learn word associations, is a well-known early example of this. The `word2vec` model is capable of turning single words (in a variety of languages, not just English) into a list of floating point values, or vectors. Due to the way models is trained, vectors which are close to each other represent words which are similar to each other, hence the term _embedding vectors_. We'll get into a bit more detail (with code!) in the next section.
 
-Armed with this knowledge, it's now clear what vector databases are used for: searching across images, video, text, audio, and other forms of unstructured data via their _content_ rather than keywords or tags (which are often input manually by users or curators). When combined with powerful machine learning models, vector databases have the capability of revolutionizing semantic search and recommendation systems. In the upcoming sections, I'll share some information about why embedding vectors can be used to represent unstructured data, go over algorithms for indexing and searching across vector spaces, and present some key features a modern vector database must implement.
+Armed with this knowledge, it's now clear what vector databases are used for: searching across images, video, text, audio, and other forms of unstructured data via their _content_ rather than keywords or tags (which are often input manually by users or curators). When combined with powerful machine learning models, vector databases have the capability of revolutionizing semantic search and recommendation systems.
+
+| Data UID | Vector representation |
+| -------- | --------------------- |
+| 00000000 | [-0.31,  0.53, -0.18, ..., -0.16, -0.38] |
+| 00000001 | [ 0.58,  0.25,  0.61, ..., -0.03, -0.31] |
+| 00000002 | [-0.07, -0.53, -0.02, ..., -0.61,  0.59] |
+| ...
+
+<sub>The "Data UID" field is a vector database is unique identifier for a piece of unstructured data to a and is similar to the [`_id` field in MongoDB](https://www.mongodb.com/docs/manual/reference/bson-types/#std-label-objectid). The vector database may also accept a unique filename or path as a UID.</sub>
+
+In the upcoming sections, I'll share some information about why embedding vectors can be used to represent unstructured data, go over algorithms for indexing and searching across vector spaces, and present some key features a modern vector database must implement.
 
 #### `x2vec`: A New Way to Understand Data
 
