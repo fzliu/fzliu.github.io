@@ -95,8 +95,6 @@ Now, cropping the signature can be done simply by slicing the input image using 
 >>> img_gray_crop = img_gray[int(y_min):int(y_max),int(x_min):int(x_max)]
 ```
 
-<sup>1</sup><sub>Everybody who knows me well knows that I have a lot of love for SIFT.</sub>
-
 __"Signing" the document__
 
 With a cropped version of my signature ready, the next step was to turn it into a black-and-white version. Recalling the concept of [image histograms](https://en.wikipedia.org/wiki/Image_histogram), I simply set a threshold value to determine which pixels should be black and which should be white; pixels less than this value would be assigned a value of `0` while pixels greater than this value would be assigned `255` (assuming 8-bit grayscale). To get rid of the "blocky" feel of black-and-white images, I blurred the resulting image using a Gaussian kernel.
@@ -182,3 +180,7 @@ In the example above, `x_offset` and `y_offset` would correspond to `250` and `5
 I hope this tool proves to be useful for everybody out there wading through the endless sea of bureaucracy. Sometime in the near future I hope to improve on this pipeline by adding OCR along with a word vectorization model to automatically determine the correct place to put the signature.
 
 As always, feel free to leave comments below. You can also connect with me via [Twitter](https://twitter.com/frankzliu) and [LinkedIn](https://linkedin.com/in/fzliu).
+
+---
+
+<sup>1</sup><sub>Everybody who knows me well knows that I have a lot of love for SIFT.</sub>

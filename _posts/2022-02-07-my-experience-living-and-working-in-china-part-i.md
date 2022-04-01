@@ -75,8 +75,6 @@ You might wonder how China's economy is able to grow at such a blistering pace d
 
 By industriousness, I really do mean _everybody_. In 2019, I visited a prison in Jiangxi to discuss a potential prisoner safety solution. In a meeting with the vice-warden, he tacitly mentioned how Adidas shoes were being made in the prison that he was running. We quickly pulled out of that project. I haven't bought Adidas- or Nike-branded shoes since.<sup>1</sup>
 
-<sup>1</sup><sub>Forced labor in Xinjiang has made [headlines](https://www.nytimes.com/2021/12/23/us/politics/china-uyghurs-forced-labor.html) in recent months, but in reality, it happens everywhere in China.</sub>
-
 #### Personal identity
 
 With the current political climate and state of affairs in mainland China, many Gen Z-ers and Millenials (mostly from [Guangdong Province](https://en.wikipedia.org/wiki/Guangdong)), as I consider Macau, Taiwan, and Hong Kong to be separate territories) who hail from mainland China but don't refer to themselves as Chinese, instead calling themselves Cantonese. While some simply wish to preserve personal identity, there are also many who dissociate themselves simply because they believe the rest of China to be inferior. I've heard some of the most asinine reasons - people spit too often in the streets, everybody plays loud Douyin/TikTok videos while riding high-speed rail, too many cigarette smokers, etc. These are the same people who conveniently forget that some sidewalks along the Mission are lined with old discarded chewing gum, that loud music is played frequently on BART or in a BART station, or that open drug usage occurs nightly in the Tenderloin.
@@ -90,5 +88,9 @@ Entire dissertations could be dedicated to each of the above sections, but I wan
 If you made it this far, thanks for reading. This post has been a bit rambly and all over the place, but the next couple should hopefully be a bit more focused. If you liked this article and are an open-source developer like myself, please give the [Towhee project](https://github.com/towhee-io/towhee) a star on Github as a show of support.
 
 In part II, I’ll cover the Chinese tech scene, from 996'ing to the open source community. Stay tuned!
+
+---
+
+<sup>1</sup><sub>Forced labor in Xinjiang has made [headlines](https://www.nytimes.com/2021/12/23/us/politics/china-uyghurs-forced-labor.html) in recent months, but in reality, it happens everywhere in China.</sub>
 
 <sup>2</sup><sub>Justice for [Zhou Xiaoxuan](https://www.cnn.com/2021/09/15/china/xianzi-zhu-jun-sexual-harassment-case-mic-intl-hnk/index.html).</sub>
