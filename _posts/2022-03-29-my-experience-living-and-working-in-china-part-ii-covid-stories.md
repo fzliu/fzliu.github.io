@@ -124,7 +124,7 @@ Thanks for making it this far - I hope this post was informative. As mentioned b
 
 <sup>3</sup><sub>Ding and [Levon Aronian](https://en.wikipedia.org/wiki/Levon_Aronian) are my two favorite players. In particular, I enjoy watching Ding's solid playstyle in conjunction with his cold, hard calculation capabilities. He's also [an incredibly humble person](https://www.chess.com/article/view/ding-liren-interview).</sup>
 
-<sup>4</sup><sub>Traditionally, there has also been a slot for the highest-rated player, but this was removed in the 2022 cycle due to rating protection/manipulation by previous Candidates Tournament participants (Ding would've otherwise qualified this year).</sup>
+<sup>4</sup><sub>Traditionally, there has also been a slot for the highest-rated player, but this was removed in the 2022 cycle due to rating protection/manipulation by previous Candidates Tournament participants (Ding would've otherwise qualified this year).</sub>
 
 <sup>5</sup><sub>Sergey had qualified via the Chess World Cup held in 2021, but due to his support of the Russian invasion of Ukraine, he received a 6-month ban from all FIDE tournaments. This reinforces my belief that the only true winners of Russia's invasion of Ukraine are China and India.</sub>
 
