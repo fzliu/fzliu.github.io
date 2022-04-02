@@ -4,6 +4,7 @@ title: "Evading Bureaucracy: Making a PDF Look Hand-Signed and Scanned"
 description: "How I added a signature to a PDF document and made it look like a scanned copy."
 categories: ["blog"]
 tags: miscellaneous
+redirect_from: /blog/evading_bureaucracy_making_a_pdf_look_hand_signed_and_scanned
 ---
 
 __Update (03/18/2022)__: _So apparently my landlord saw the first version of this post, which prompted him "retract" the initial lease and angrily ask for a wet signature (I temporarily [removed this post](https://github.com/fzliu/fzliu.github.io/commit/99d18fe826f616e3f16ad5a2c3fc1504eaa18d6e) due to this). Instead of obliging, I used the same [Towhee pipeline](https://towhee.io/fzliu/sign-and-scan) as described below, but randomized the rotation of each page and slightly modified the way noise was added._

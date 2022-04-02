@@ -4,6 +4,7 @@ title: "My Experience Living and Working in China, Part II: COVID Stories"
 description: "An overview of living and working in China during the COVID pandemic."
 categories: ["blog"]
 tags: china
+redirect_from: /blog/my_experience_living_and_working_in_china_part_ii_covid_stories
 ---
 
 _In this four-part article, I’ll go over some of the lessons I learned living and doing business in China’s tech industry. During my time in China, I’ve led a team of 10+ engineers to develop a location-based IoT and sensing platform, co-founded an open-source project called [Towhee](https://github.com/towhee-io/towhee), and developed countless relationships with folks in a number of difference cities (many of whom I now consider good friends). I’ll go over some of the common misconceptions about China ranging from living and working in China to the government’s pandemic response._
