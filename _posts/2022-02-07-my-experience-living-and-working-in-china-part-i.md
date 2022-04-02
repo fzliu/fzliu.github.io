@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "My Experience Living and Working in China: Part I"
+title: "My Experience Living and Working in China, Part I"
 description: "An overview of living and working in China."
 categories: ["blog"]
 tags: china
