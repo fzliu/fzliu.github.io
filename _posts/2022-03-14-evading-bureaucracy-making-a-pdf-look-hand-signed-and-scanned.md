@@ -47,7 +47,7 @@ The first step was to create a hand-written signature that looked like it was sc
 
 The next step here is to crop out the region with the signature. The first instinct of a machine learning engineer might be to apply a backbone-based detection model such as [SSD](https://arxiv.org/abs/1512.02325) or [YOLO](https://arxiv.org/abs/2004.10934), but for a constrained problem such as this one, it's much more practical to go for a traditional edge or keypoint detector rather than a heavier machine learned model.
 
-I fell back to the beloved [SIFT algorithm](https://www.cs.ubc.ca/~lowe/papers/ijcv04.pdf) for keypoint detection<sup>1</sup>. The trusty [OpenCV](https://opencv.org/) library has a great implementation of this. Since I wasn't concerned with the keypoint quantity, I set a fairly high threshold value for low-contrast keypoint removal - this would throw away keypoints located in "whitespace" while preserving most of the keypoints located directly on the signature itself. The original SIFT paper used a threshold of `0.03`; I used a threshold of `0.1`, but some further experimentation may be needed here to determine an optimal value. In Python:
+I fell back to the beloved [SIFT algorithm](https://www.cs.ubc.ca/~lowe/papers/ijcv04.pdf) for keypoint detection[^1]. The trusty [OpenCV](https://opencv.org/) library has a great implementation of this. Since I wasn't concerned with the keypoint quantity, I set a fairly high threshold value for low-contrast keypoint removal - this would throw away keypoints located in "whitespace" while preserving most of the keypoints located directly on the signature itself. The original SIFT paper used a threshold of `0.03`; I used a threshold of `0.1`, but some further experimentation may be needed here to determine an optimal value. In Python:
 
 ```python
 >>> import cv2
@@ -184,4 +184,4 @@ As always, feel free to leave comments below. You can also connect with me via [
 
 ---
 
-<sup>1</sup><sub>Everybody who knows me well knows that I have a lot of love for SIFT.</sub>
+[^1]: <sub>Everybody who knows me well knows that I have a lot of love for SIFT.</sub>

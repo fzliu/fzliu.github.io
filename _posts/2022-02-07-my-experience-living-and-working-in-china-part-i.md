@@ -73,9 +73,9 @@ China's "city brains" are a totally different beast, designed to anticipate and 
 </div>
 <p><sub>An image I found of Pudong District's (Pudong is a district in Shanghai, home to Shanghai Pudong International Airport i.e. PVG) city brain platform via a Baidu search. Although it looks fancy, there is really little to no new underlying technology behind these systems.</sub></p>
 
-You might wonder how China's economy is able to grow at such a blistering pace despite the huge number of arguably inefficient government programs. The answer is rooted in East Asian culture: work ethic. Blue collar Chinese workers are willing work 60+ hour weeks while sustaining themselves on ramen and $1.5 cigarette packs every day just to ensure their kids can get the best education and an improved quality of life. The whole concept of [996](https://en.wikipedia.org/wiki/996_working_hour_system) is rooted in the Confucian ideals of hard work and industriousness. The "laziest" men and women in China are aguably owners of small- to mid-size businesses; they are often the last to arrive and first to leave from work. The CPC loves to take credit for China's recent growth, but the reality is that the growth was the result of Chinese work ethic plus a switch from central planning to a mixed economy.
+You might wonder how China's economy is able to grow at such a blistering pace despite the huge number of arguably inefficient government programs. The answer is rooted in East Asian culture: work ethic. Blue collar Chinese workers are willing work 60+ hour weeks while sustaining themselves on ramen and $1.5 cigarette packs every day just to ensure their kids can get the best education and an improved quality of life. The whole concept of [996](https://en.wikipedia.org/wiki/996_working_hour_system) is rooted in the Confucian ideals of hard work and industriousness. The "laziest" men and women in China are arguably owners of small- to mid-size businesses; they are often the last to arrive and first to leave from work. The CPC loves to take credit for China's recent growth, but the reality is that the growth was the result of Chinese work ethic plus a switch from central planning to a mixed economy.
 
-By industriousness, I really do mean _everybody_. In 2019, I visited a prison in Jiangxi to discuss a potential prisoner safety solution. In a meeting with the vice-warden, he tacitly mentioned how Adidas shoes were being made in the prison that he was running. We quickly pulled out of that project. I haven't bought Adidas- or Nike-branded shoes since.<sup>1</sup>
+By industriousness, I really do mean _everybody_. In 2019, I visited a prison in Jiangxi to discuss a potential prisoner safety solution. In a meeting with the vice-warden, he tacitly mentioned how Adidas shoes were being made in the prison that he was running. We quickly pulled out of that project. I haven't bought Adidas- or Nike-branded shoes since[^1].
 
 #### Personal identity
 
@@ -85,7 +85,7 @@ I strongly dislike the CPC, but have immense love for Chinese people and Chinese
 
 #### Wrapping up
 
-Entire dissertations could be dedicated to each of the above sections, but I wanted to highlight misconceptions and some other bits of information that might not be as readily accessible. In particular, the previous section is by no means a comprehensive list of social issues that China is facing, but rather a brief summary of things that might not be too well understood in the West. #MeToo<sup>2</sup>, a declining natural birth rate, and racial divisions are just a small number of similar/parallel issues that are happening in both America and China.
+Entire dissertations could be dedicated to each of the above sections, but I wanted to highlight misconceptions and some other bits of information that might not be as readily accessible. In particular, the previous section is by no means a comprehensive list of social issues that China is facing, but rather a brief summary of things that might not be too well understood in the West. #MeToo[^2], a declining natural birth rate, and racial divisions are just a small number of similar/parallel issues that are happening in both America and China.
 
 If you made it this far, thanks for reading. This post has been a bit rambly and all over the place, but the next couple should hopefully be a bit more focused. If you liked this article and are an open-source developer like myself, please give the [Towhee project](https://github.com/towhee-io/towhee) a star on Github as a show of support.
 
@@ -93,6 +93,6 @@ In part II, I’ll cover the Chinese tech scene, from 996'ing to the open source
 
 ---
 
-<sup>1</sup><sub>Forced labor in Xinjiang has made [headlines](https://www.nytimes.com/2021/12/23/us/politics/china-uyghurs-forced-labor.html) in recent months, but in reality, it happens everywhere in China.</sub>
+[^1]: <sub>Forced labor in Xinjiang has made [headlines](https://www.nytimes.com/2021/12/23/us/politics/china-uyghurs-forced-labor.html) in recent months, but in reality, it happens everywhere in China.</sub>
 
-<sup>2</sup><sub>Justice for [Zhou Xiaoxuan](https://www.cnn.com/2021/09/15/china/xianzi-zhu-jun-sexual-harassment-case-mic-intl-hnk/index.html).</sub>
+[^2]: <sub>Justice for [Zhou Xiaoxuan](https://www.cnn.com/2021/09/15/china/xianzi-zhu-jun-sexual-harassment-case-mic-intl-hnk/index.html).</sub>
