@@ -134,7 +134,7 @@ Vector embeddings are not just limited to natural language. In the example below
 
 __Prep work__
 
-For this example, we'll be using [Towhee](https://towhee.io), a framework for developing and running pipelines which include deep learning models (built on top of PyTorch and Tensorflow). We'll also download three images from the [YFCC100M dataset](http://www.yfcc100m.org) to test our embeddings on.
+For this example, we'll be using [Towhee](https://towhee.io), a framework for developing and running embedding pipelines which include deep learning models (built on top of PyTorch and Tensorflow). We'll also download three images from the [YFCC100M dataset](http://www.yfcc100m.org) to test our embeddings on.
 
 
 ```shell
@@ -153,7 +153,7 @@ For this example, we'll be using [Towhee](https://towhee.io), a framework for de
 
 __Generating embeddings__
 
-Now let's use `towhee` to generate embeddings for the test images below. The first and second images should be fairly close to each other in embedding space, while the first and third should be further away:
+Now let's use Towhee to generate embeddings for the test images below. The first and second images should be fairly close to each other in embedding space, while the first and third should be further away:
 
 | ![](https://farm6.staticflickr.com/5012/5493808033_eb1dfcd98f_q.jpg) | ![](https://farm1.staticflickr.com/29/60515385_198df3b357_q.jpg) | ![](https://farm2.staticflickr.com/1171/1088524379_7a150cef81_q.jpg) |
 | :----: | :----: | :---: |
@@ -179,7 +179,7 @@ __Normalize the resulting vector__
 
 __Now let's compute distances__
 
-With the normalized vectors in place, we can now compute an inverted similarity metric using the Euclidean distance between vectors (lower = more similar).
+With the normalized vectors in place, we can now compute an inverted similarity metric using the Euclidean distance between vectors (lower = more similar). Euclidean distance is the most common distance/similarity metric available to vector database users:
 
 ```python
 >>> import numpy as np
@@ -206,20 +206,26 @@ When scaling to huge numbers of vector embeddings, searching across embedding ve
 
 Like the production-ready relational databases, vector databases should meet a few key performance targets before they can be deployed in actual production environments:
 
-- __Scalable__: Embedding vectors are fairly small in terms of absolute size, but to facilitate read and write speeds, they are usually stored in-memory (disk-based NN/ANN search is a topic for another blog post). When scaling to billions of embedding vectors and beyond, storage and compute quickly become unmanageable for a single machine. Sharding can solve this problem, but this requires splitting the indexes across multiple machines as well.
+- __Scalable__: Embedding vectors are fairly small in terms of absolute size, but to facilitate read and write speeds, they are usually stored in-memory (disk-based NN/ANN search is a topic for another blog post). When scaling to billions of embedding vectors and beyond, storage and compute quickly become unmanageable for a single machine. Sharding can solve this problem, but this requires splitting the indexes across multiple machines as well.
 - __Reliable__: Modern relational databases are fault-tolerant. Replication allows cloud-native enterprise databases to avoid having single points of failure, enabling graceful startup and shutdown. Vector databases are no different, and should be able to handle internal faults without data loss and with minimal operational impact.
-- __Fast__: Yes, query and write speeds are important, even for vector databases. An increasingly common use case is processing and indexing database inputs in real-time. For platforms such as Snapchat and Instagram, which can have hundreds or thousands of new photos (a type of unstructured data) uploaded per second, speed becomes an incredibly important factor.
+- __Fast__: Yes, query and write speeds are important, even for vector databases. An increasingly common use case for vector databases is processing and indexing input data in real-time. For platforms such as Snapchat and Instagram, which can have hundreds or thousands of new photos uploaded per second, speed becomes an incredibly important factor.
 
-With data being generated at unprecedented rates, making sense of all the data through vector databases will become increasingly important.
+#### Selecting a vector database
+
+With unstructured data being generated at unprecedented rates, the ability to transform, store, and analyze incoming data streams is becoming a pressing need for application developers looking to use AI/ML. There are a number of open-source vector database projects to choose from - [Milvus](https://milvus.io), [Vespa](https://vespa.ai), and [Weaviate](https://weaviate.io) are three commonly deployed solutions. Some of these vector database projects refer to themselves as _vector search engines_ or _neural search engines_, concepts which are functionally equivalent to vector databases.
+
+For my own personal applications, I'll select [Milvus](https://milvus.io) 99% of the time - it's cloud-native and fast[^3]. [Zilliz](https://zilliz.com) will be releasing a managed version of [Milvus](https://milvus.io) later in 2022, so the option of seamlessly upgrading to a managed vector database will soon be available as well.
+
+Open-source vector database projects have the distinct advantage of being community-driven and thoroughly tested (via a number applications ranging from small personal projects to large commercial deployments). For this reason, I _do not_ recommend using a closed-source vector database such as Pinecone at this time.
 
 #### Some final words
-
-Here's [a great comparison](https://farfetchtechblog.com/en/blog/post/powering-ai-with-vector-databases-a-benchmark-part-i/) between [Milvus](https://milvus.io) and [Weaviate](https://weaviate.io) (tldr: Milvus is better). Furthermore, if you're interested in generating embeddings across your own data, or are interested to see other [cool machine learning pipelines](https://towhee.io/towhee/anime-transfer), I recommend checking out the [Towhee](https://towhee.io) open-source project.
 
 That's all folks - hope this post was informative. If you have any questions, comments, or concerns, feel free to leave a comment below. Stay tuned for more!
 
 ---
 
-[^1]: <sub>The "Data UID" field is a vector database is unique identifier for a piece of unstructured data to a and is similar to the [`_id` field in MongoDB](https://www.mongodb.com/docs/manual/reference/bson-types/#std-label-objectid). The vector database may also accept a unique filename or path as a UID.</sub>
+[^1]: <sub>The "Data UID" field in a vector database is a unique identifier for a single unstructured data element and is similar to the [`_id` field in MongoDB](https://www.mongodb.com/docs/manual/reference/bson-types/#std-label-objectid). Some vector databases also accept a unique filename or path as a UID.</sub>
 
 [^2]: <sub>Early computer vision and image processing relied on local feature descriptors to turn an image into a “bag” of embedding vectors – one vector for each detected keypoint. [SIFT](https://www.cs.ubc.ca/~lowe/papers/ijcv04.pdf), [SURF](https://people.ee.ethz.ch/~surf/eccv06.pdf), and [ORB](http://www.gwylab.com/download/ORB_2012.pdf) are three well-known feature descriptors you may have heard of. These feature descriptors, while useful for matching images with one another, proved to be a fairly poor way to represent audio (via spectrograms) and images.</sub>
+
+[^3]: Here's [a great comparison](https://farfetchtechblog.com/en/blog/post/powering-ai-with-vector-databases-a-benchmark-part-i/) between [Milvus](https://milvus.io) and [Weaviate](https://weaviate.io), two of the more popular open-source vector database options today (tldr: Milvus is better).
