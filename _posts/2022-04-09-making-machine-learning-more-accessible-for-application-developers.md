@@ -2,6 +2,7 @@
 layout: post
 title: "Making Machine Learning More Accessible for Application Developers"
 description: "Training and using embedding models models can be difficult for software developers. Towhee is here to help."
+image: https://images.unsplash.com/photo-1504639725590-34d0984388bd
 categories: ["blog"]
 tags: machine-learning
 ---
