@@ -24,7 +24,7 @@ This is where my story takes a bit of a turn. In late 2017, the company received
 <div align="center">
   <img src="https://live.staticflickr.com/780/20450023608_5b0b93c59b_h.jpg">
 </div>
-<p><sub>San Francisco Chinatown is a poor caricature of Qing dynasty China. Same goes for the architecture you see in Chinese restaurants across America. Photo by <a href="https://flickr.com/photos/archer10/20450023608">Dennis Jarvis</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0 license</a>, original photo.</sub></p>
+<p style="text-align:center"><sub>San Francisco Chinatown is a poor caricature of Qing dynasty China. Same goes for the architecture you see in Chinese restaurants across America. Photo by <a href="https://flickr.com/photos/archer10/20450023608">Dennis Jarvis</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0 license</a>, original photo.</sub></p>
 
 #### Alipay, WeChat, and QR codes
 
@@ -35,13 +35,13 @@ The obvious downside to this is that personal information becomes extremely cent
 <div align="center">
   <img align="center" src="https://live.staticflickr.com/2822/33442101433_1ea5535c14_h.jpg">
 </div>
-<p><sub>Alipay and WeChat work by opening a camera and scanning a QR code, which redirects you to the store's payments page. You can then pay an arbitrary amount of RMB, which will immediately show up in the payee's balance once complete. Photo by <a href="https://flickr.com/photos/kongharald/33442101433">Harald Groven</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0 license</a>, original photo.</sub></p>
+<p style="text-align:center"><sub>Alipay and WeChat work by opening a camera and scanning a QR code, which redirects you to the store's payments page. You can then pay an arbitrary amount of RMB, which will immediately show up in the payee's balance once complete. Photo by <a href="https://flickr.com/photos/kongharald/33442101433">Harald Groven</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0 license</a>, original photo.</sub></p>
 
 
 <div align="center">
   <img src="/img/alipay-screenshot.jpg">
 </div>
-<p><sub>Here's a screenshot of my Alipay. Its primary use is for payments, as evident by the top row, but mini-programs (second row from the top) have now become an important part of the app.</sub></p>
+<p style="text-align:center"><sub>Here's a screenshot of my Alipay. Its primary use is for payments, as evident by the top row, but mini-programs (second row from the top) have now become an important part of the app.</sub></p>
 
 Alipay and WeChat's success within mainland China are in large part due to the smartphone + QR code revolution, which has truly permated all aspects of Chinese life. Shared bikes can be unlocked by scanning a QR code on your phone. You can add friends on Alipay and WeChat using QR codes. Many Communist Party of China (CPC) functions rely on tight Alipay or WeChat integration. You can even login to third-party websites and check in as a guest in office buildings via QR codes. I am by no means a security expert, but this system somehow feels a bit gameable despite its widespread use by over a billion people.
 
@@ -54,7 +54,7 @@ Some provincial (the equivalent of a state in America) governments have issued n
 <div align="center">
   <img src="/img/chinese-business-license-sample.jpg">
 </div>
-<p><sub>A common joke in China is that there are four castes. From top to bottom these are: 1) CPC officials, 2) foreigners, 3) white collar workers, and finally 4) blue collar workers. Even with this supposed semi-VIP treatment, getting a business license such as this one is something I do not want to go through again.</sub></p>
+<p style="text-align:center"><sub>A common joke in China is that there are four castes. From top to bottom these are: 1) CPC officials, 2) foreigners, 3) white collar workers, and finally 4) blue collar workers. Even with this supposed semi-VIP treatment, getting a business license such as this one is something I do not want to go through again.</sub></p>
 
 The same goes for pretty much all processes which require some sort of government approval, including but not limited to acquiring a work permit, registering an address change, and replacing a lost ID card. Even flying to China requires a mountain of [paperwork and approvals](http://www.chinaconsulatesf.org/eng/zytz/202201/t20220109_10480334.htm), even if you already have a Chinese visa. My main problem with all this is the CPC's complete lack of transparency. Why can't I transit through a third country on my way to China if I'm going to have to undergo 14 days of mandatory hotel quarantine plus another 7 days of home quarantine anyway? From a foreigner's perspective, this is one of the most frustrating aspects of China in an otherwise amazing experience - CPC overreach in almost every aspect of everyday life. The CPC grossly mismanages via overregulation in some sectors and underregulation (hello, housing market) in others.
 
@@ -71,7 +71,7 @@ China's "city brains" are a totally different beast, designed to anticipate and 
 <div align="center">
   <img src="/img/pudong-city-brain.jpg">
 </div>
-<p><sub>An image I found of Pudong District's (Pudong is a district in Shanghai, home to Shanghai Pudong International Airport i.e. PVG) city brain platform via a Baidu search. Although it looks fancy, there is really little to no new underlying technology behind these systems.</sub></p>
+<p style="text-align:center"><sub>An image I found of Pudong District's (Pudong is a district in Shanghai, home to Shanghai Pudong International Airport i.e. PVG) city brain platform via a Baidu search. Although it looks fancy, there is really little to no new underlying technology behind these systems.</sub></p>
 
 You might wonder how China's economy is able to grow at such a blistering pace despite the huge number of arguably inefficient government programs. The answer is rooted in East Asian culture: work ethic. Blue collar Chinese workers are willing work 60+ hour weeks while sustaining themselves on ramen and $1.5 cigarette packs every day just to ensure their kids can get the best education and an improved quality of life. The whole concept of [996](https://en.wikipedia.org/wiki/996_working_hour_system) is rooted in the Confucian ideals of hard work and industriousness. The "laziest" men and women in China are arguably owners of small- to mid-size businesses; they are often the last to arrive and first to leave from work. The CPC loves to take credit for China's recent growth, but the reality is that the growth was the result of Chinese work ethic plus a switch from central planning to a mixed economy.
 
