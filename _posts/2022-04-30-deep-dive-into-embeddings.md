@@ -1,14 +1,14 @@
 ---
 layout: post
 title: "Deep Dive Into Embeddings"
-description: "A deep dive into embeddings, embedding vectors, and similarity search."
+description: "A deep dive into embeddings and embedding vectors."
 categories: ["blog"]
 tags: machine-learning
 ---
 
 I've broached the subject of embeddings/embedding vectors in prior blog posts on [vector databases](/blog/a-gentle-introduction-to-vector-databases){:target="\_blank"} and [ML application development](/blog/making-machine-learning-more-accessible-for-application-developers){:target="\_blank"}, but haven't yet done a deep dive on embeddings and some of the theory behind how embedding models work. As such, this article will be dedicated towards going a bit more in-depth into embeddings/embedding vectors, along with how they are used in modern ML algorithms and pipelines.
 
-A quick note - this article will require an intermediate knowledge of deep learning and neural networks. If you're not quite there yet, I recommend first taking a look at [Google's ML Crash Course](https://developers.google.com/machine-learning/crash-course/embeddings/video-lecture){:target="\_blank"}. The course contents  are great for understanding the basics of neural networks for computer vision and machine learning.
+A quick note - this article will require an intermediate knowledge of deep learning and neural networks. If you're not quite there yet, I recommend first taking a look at [Google's ML Crash Course](https://developers.google.com/machine-learning/crash-course/embeddings/video-lecture){:target="\_blank"}. The course contents are great for understanding the basics of neural networks for CV and NLP.
 
 #### A quick recap
 
@@ -38,7 +38,7 @@ Vectorizing data via embeddings[^1] is, at its heart, a method for _dimensionali
 
 Embedding algorithms based on deep neural networks are almost universally considered to be stronger than traditional dimensionality reduction methods. These embeddings are being used more and more frequently in the industry in a variety of applications, e.g. content recommendation, question-answering, chatbots, etc. As we'll see later, using embeddings to represent images and text _within_ neural networks has also become increasingly popular in recent years.
 
-<div id="embedding-viz"></div>
+<div id="embedding-viz" align="center"></div>
 <p style="text-align:center"><sub>Visualizing text embeddings produced by <a href="https://towhee.io/text-embedding/transformers" target="_blank">DistilBERT</a>. Note how "football" is significantly closer to "soccer" than it is to "footwear" despite "foot" being common both words.</sub></p>
 
 #### Supervised embeddings
@@ -74,18 +74,22 @@ _Autoencoders_ generally have two main components. The first component is an enc
 
 The blue boxes corresponding to the `Encoder` and `Decoder` are both feed-forward neural networks, while the `State` is the desired embedding. There's nothing paricularly special about either of these networks - many image autoencoders will use a standard ResNet50 or ViT for the encoder network and a similarly large network for the decoder.
 
-Since autoencoders are trained to map the input to a latent state and then back to the original data, unsupervised or self-supervised embeddings are taken directly from the output layer of an encoder as opposed to an intermediate layer for models trained with full supervision. As such, autoencoder embeddings are only meant to be used to for _reconstruction_. In other words, they can be used to represent the input data but are generally not powerful enough to represent semantics, such as what differentiates a photo of a cat from an photo of a dog.
+Since autoencoders are trained to map the input to a latent state and then back to the original data, unsupervised or self-supervised embeddings are taken directly from the output layer of an encoder as opposed to an intermediate layer for models trained with full supervision. As such, autoencoder embeddings are only meant to be used to for _reconstruction_[^2]. In other words, they can be used to represent the input data but are generally not powerful enough to represent semantics, such as what differentiates a photo of a cat from an photo of a dog.
 
-In recent years, numerous improvements to self-supervision beyond the traditional autoencoder have come about[^3]. For NLP, pre-training models with _context_, i.e. where a word or character appears relative to others in the same sentence or phrase, is commonplace and is now considered the de-facto technique for training state-of-the-art text embedding models[^4]. Self-supervised computer vision embedding models are also roaring to life; contrastive training techniques[^5] that rely on data augmentation have shown great representational power
+In recent years, numerous improvements to self-supervision beyond the traditional autoencoder have come about[^3]. For NLP, pre-training models with _context_, i.e. where a word or character appears relative to others in the same sentence or phrase, is commonplace and is now considered the de-facto technique for training state-of-the-art text embedding models[^3]. Self-supervised computer vision embedding models are also roaring to life; contrastive training techniques that rely on data augmentation have shown great results when applied to general computer vision tasks. [SimCLR](https://arxiv.org/abs/2002.05709){:target="\_blank"} and [data2vec](https://arxiv.org/abs/2202.03555){:target="\_blank"} are two examples of neural networks that make use of masking and/or other augmentations for self-supervised training.
 
 #### Embeddings as an input to other models
 
-Embedding models are highly unique; not only are they valuable for generic application development, but their outputs are often used in other machine learning models. A great example of this is OpenAI's [CLIP](https://github.com/openai/CLIP){:target="\_blank"}, a large neural network model that is trained to match images with natural langugage. CLIP is trained on what amounts to essentially infinite data from the internet, e.g. Flickr photos and the corresponding photo title.
+Embedding models are highly unique; not only are they valuable for generic application development, but their outputs are often used in other machine learning models. [Vision transformers](https://arxiv.org/abs/2010.11929){:target="\_blank"} are an excellent example of this. Their popularity has exploded in the past two years, aided by strong performance and a large receptive field unavailable to traditional convolutional neural networks. The core premise of vision transformers is to divide an image into square patches, generate embeddings for each patch, and use the embeddings as inputs into a standard transformer. This, surprisingly, works very well for image recognition.
+
+Another great example of this is OpenAI's [CLIP](https://github.com/openai/CLIP){:target="\_blank"}, a large neural network model that is trained to match images with natural langugage. CLIP is trained on what amounts to essentially infinite data from the internet, e.g. Flickr photos and the corresponding photo title.
 
 <div align="center">
   <img align="center" src="https://github.com/openai/CLIP/raw/main/CLIP.png">
 </div>
 <p style="text-align:center"><sub>Encoders and their corresponding embeddings are used to great effect in OpenAI's CLIP model. Image by <a href="https://github.com/openai" target="_blank">OpenAI</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.</sub></p>
+
+The methodology behind CLIP is actually fairly straightforward. First, CLIP maps images and text into a latent state (i.e. an embedding); these latent states are then trained to map to the _same space_, i.e. a text embedding and image embedding should be very close to each other if the text is able to accurately describe the image. The devil is in the details, when it comes to ML, and CLIP is actually fairly difficult to implement in practice without a sizeable dataset and some hyperparameter tuning.
 
 CLIP is used as a core component in DALLE (and DALLE-2), a text-to-image generation engine from OpenAI. There's been a lot of buzz around DALLE-2 recently, but none of that would be possible without CLIP's representational power. While CLIP and DALLE's results have been impressive, image embeddings still have significant room for growth. Certain higher-level semantics, such as object count and mathematical operations are still difficult to represent in an eimage embedding. Work is being done to improve on this, but
 
@@ -112,19 +116,24 @@ With [Towhee](https://github.com/towhee-io/towhee){:target="\_blank"}, the defau
 
 The last line in the above code snippet recreates a feed-forward network (`nn.Sequential`) composed of all layers in `resnet50` (`resnet50.children()`) with the exception of the final layer (`[:-1]`). Intermediate embeddings can also be generated with the same layer removal method. This step is unnecessary for models trained with contrastive/triplet loss or as an autoencoder.
 
-Models based on `timm` and `transformers` also maintain their own methods which make feature extraction easy:
+Models based on [`timm`](https://github.com/rwightman/pytorch-image-models) (for CV) and [`transformers`](https://github.com/huggingface/transformers) (for NLP) also maintain their own methods which make feature extraction easy:
 
 ```python
+>>> import numpy as np
+>>> from PIL import Image
 >>> import timm
+>>> image = numpy.array(Image.open('towhee.jpg'))
 >>> model = timm.models.resnet50(pretrained=True)
->>> emb = model.forward_features(img)
+>>> embedding = model.forward_features(img)
 ```
 
 ```python
->>> import transformers
+>>> from transformers import AutoTokenizer, AutoModel
+>>> tokenizer = AutoTokenizer.from_pretrained('bert-base-uncased')
 >>> model = AutoModel.from_pretrained('bert-base-uncased')
->>> out = model('Hello, world!')
->>> emb = out.last_hidden_state()
+>>> inputs = tokenizer('Hello, world!', return_tensors='pt')
+>>> outputs = model(**inputs)
+>>> embedding = outputs.last_hidden_state()
 ```
 
 Towhee maintains wrappers for both `timm` and `transformers`:
@@ -135,18 +144,18 @@ Towhee maintains wrappers for both `timm` and `transformers`:
 ...     .text_embedding.transformers(model_name='distilbert-base-cased') \
 ...     .to_list()[0]  # same as intro example
 ...
->>> img_embedding = towhee.glob('./towhee.jpg') \
+>>> img_embedding = towhee.glob('towhee.jpg') \
 ...    .image_decode() \
 ...    .image_embedding.timm(model_name='resnet50') \
-...    .show()
+...    .to_list()[0]
 ...
 ```
 
 #### Other resources
 
-I've compiled a list of other great resources on embeddings, if you want to read more or look at some other perspectives:
+I've compiled a short and very incomplete list of other great resources on embeddings, if you want to read more or approach the topic from another perspective:
 
-1. The [Milvus documentation](https://milvus.io/docs/v1.1.0/vector.md){:target="\_blank"} provides an overview of embedding vectors (as it relates to storage).
+1. The [Milvus documentation](https://milvus.io/docs/v1.1.0/vector.md){:target="\_blank"} provides an overview of embedding vectors (as it relates to storage and vector databases).
 
 2. OpenAI maintains page on [text embeddings](https://beta.openai.com/docs/guides/embeddings){:target="\_blank"} that you can check out.
 
@@ -154,19 +163,17 @@ I've compiled a list of other great resources on embeddings, if you want to read
 
 4. See how embeddings are being used at [Twitter](https://blog.twitter.com/engineering/en_us/topics/insights/2018/embeddingsattwitter){:target="\_blank"} for recommendation.
 
-5. [My previous post](/blog/a-gentle-introduction-to-vector-databases){:target="\_blank"} on vector databases introduces embedding storage components.
+5. Reverse image search is one of many applications for embedding vectors. [This tutorial](https://docs.towhee.io/Tutorials/reverse-image-search/){:target="\_blank"} demonstrates how to build one in minutes.
+
+In a future post, I'll provide a brief overview of similarity search and vector indexing algorithms. Stay tuned!
 
 ---
 
 [^1]: Adapted from [D2L.ai](https://github.com/d2l-ai/d2l-en){:target="\_blank"}. [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/){:target="\_blank"} license.
 
-[^2]: TODO
+[^2]: Input reconstruction is a fairly complex problem. For example, generating embeddings that preserve face details in an input photo is a desireable feature, but a "generic" autoencoder would have trouble doing so.
 
-[^3]: I won't cover all of these improved training techniques. The past couple of years have seen enough ML novelties to fill an entire book!
-
-[^4]: Patches or crops of whole images do techically have context as well. Algorithms and models which understand context are crucial to the subfield of computer vision/graphics known as _inpainting_. Pre-training techniques for computer vision appliations hasn't been as successful, but it will likely become more viable in the near future. [This 2021 paper](https://arxiv.org/abs/2111.06377){:target="\_blank"} shows how masking patches in an autoencoder can be used for pre-training vision transformers.
-
-[^5]: [SimCLR](https://arxiv.org/abs/2002.05709){:target="\_blank"} and [data2vec](https://arxiv.org/abs/2202.03555){:target="\_blank"} both make use of masking and/or other augmentations for self-supervised training.
+[^3]: Patches or crops of whole images do techically have context as well. Algorithms and models which understand context are crucial to the subfield of computer vision/graphics known as _inpainting_. Pre-training techniques for computer vision appliations hasn't been as successful, but it will likely become more viable in the near future. [This 2021 paper](https://arxiv.org/abs/2111.06377){:target="\_blank"} shows how masking patches in an autoencoder can be used for pre-training vision transformers.
 
 
 <script src="https://d3js.org/d3.v6.js"></script>
