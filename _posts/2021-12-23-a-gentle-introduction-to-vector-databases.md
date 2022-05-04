@@ -212,7 +212,7 @@ Like the production-ready relational databases, vector databases should meet a f
 
 #### Selecting a vector database
 
-With unstructured data being generated at unprecedented rates, the ability to transform, store, and analyze incoming data streams is becoming a pressing need for application developers looking to use AI/ML. There are a number of open-source vector database projects to choose from - [Milvus](https://milvus.io), [Vespa](https://vespa.ai), and [Weaviate](https://weaviate.io) are three commonly deployed solutions. Some of these vector database projects refer to themselves as _vector search engines_ or _neural search engines_, concepts which are functionally equivalent to vector databases.
+With unstructured data being generated at unprecedented rates, the ability to transform, store, and analyze incoming data streams is becoming a pressing need for application developers looking to use AI/ML. There are a number of open-source vector database projects to choose from - [Milvus](https://milvus.io), [Vespa](https://vespa.ai), and [Weaviate](https://weaviate.io) are three commonly deployed solutions. Some of these projects refer to themselves as _vector search engines_ or _neural search engines_, concepts which are functionally equivalent to vector databases.
 
 For my own personal applications, I'll select [Milvus](https://milvus.io) 99% of the time - it's cloud-native and fast[^3]. [Zilliz](https://zilliz.com) will be releasing a managed version of [Milvus](https://milvus.io) later in 2022, so the option of seamlessly upgrading to a managed vector database will soon be available as well.
 
@@ -220,7 +220,7 @@ Open-source vector database projects have the distinct advantage of being commun
 
 #### Some final words
 
-That's all folks - hope this post was informative. If you have any questions, comments, or concerns, feel free to leave a comment below. Stay tuned for more!
+That's all folks - hope this post was informative. There's a [vector database subreddit](https://www.reddit.com/r/vectordatabase) if you're interested in learning more vector databases. In the meantime, if you have any questions, comments, or concerns, feel free to leave a comment below. Stay tuned for more!
 
 ---
 
