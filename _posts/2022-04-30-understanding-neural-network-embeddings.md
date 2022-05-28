@@ -7,13 +7,13 @@ tags: machine-learning
 redirect_from: /blog/deep-dive-into-embeddings
 ---
 
-I've broached the subject of embeddings/embedding vectors in prior blog posts on [vector databases](/blog/a-gentle-introduction-to-vector-databases){:target="\_blank"} and [ML application development](/blog/making-machine-learning-more-accessible-for-application-developers){:target="\_blank"}, but haven't yet done a deep dive on embeddings and some of the theory behind how embedding models work. As such, this article will be dedicated towards going a bit more in-depth into embeddings/embedding vectors, along with how they are used in modern ML algorithms and pipelines.
+I've broached the subject of embeddings in prior blog posts on [vector databases](/blog/a-gentle-introduction-to-vector-databases){:target="\_blank"} and [ML application development](/blog/making-machine-learning-more-accessible-for-application-developers){:target="\_blank"}, but haven't yet done a deep dive on embeddings and some of the theory behind how embedding models work. As such, this article will be dedicated towards going a bit more in-depth into embeddings/embedding vectors, along with how they are used in modern ML algorithms and pipelines.
 
 A quick note - this article will require an intermediate knowledge of deep learning and neural networks. If you're not quite there yet, I recommend first taking a look at [Google's ML Crash Course](https://developers.google.com/machine-learning/crash-course/embeddings/video-lecture){:target="\_blank"}. The course contents are great for understanding the basics of neural networks for CV and NLP.
 
 #### A quick recap
 
-Vectorizing data via embeddings[^1] is, at its heart, a method for _dimensionality reduction_. Traditional dimensionality reduction methods - [PCA](https://towardsdatascience.com/the-most-gentle-introduction-to-principal-component-analysis-9ffae371e93b){:target="\_blank"}, [LDA](https://www.mygreatlearning.com/blog/understanding-latent-dirichlet-allocation/){:target="\_blank"}, etc. - use a combination of linear algebra, kernel tricks, and other statistical methods to "compress" data. On the other hand, modern deep learning models perform dimensionality reduction by mapping the input data into a _latent space_, i.e. a representation of the input data where nearby points correspond to semantically similar data points. What used to be a one-hot vector representing a single word or phrase, for example, can now be represented as a dense vector with a significantly lower dimension. We can see this in action with the [Towhee library](https://github.com/towhee-io/towhee){:target="\_blank"}:
+Neural network embeddings[^1] are, simply put, a method for _dimensionality reduction_. Traditional dimensionality reduction methods - [PCA](https://towardsdatascience.com/the-most-gentle-introduction-to-principal-component-analysis-9ffae371e93b){:target="\_blank"}, [LDA](https://www.mygreatlearning.com/blog/understanding-latent-dirichlet-allocation/){:target="\_blank"}, etc. - use a combination of linear algebra, kernel tricks, and other statistical methods to "compress" data. On the other hand, modern deep learning models perform dimensionality reduction by mapping the input data into a _latent space_, i.e. a representation of the input data where nearby points correspond to semantically similar data points. What used to be a one-hot vector representing a single word or phrase, for example, can now be represented as a dense vector with a significantly lower dimension. We can see this in action with the [Towhee library](https://github.com/towhee-io/towhee){:target="\_blank"}:
 
 ```shell
 % pip install towhee  # pip3
@@ -35,7 +35,6 @@ Vectorizing data via embeddings[^1] is, at its heart, a method for _dimensionali
            [ 0.14108554, -0.00599108,  0.34098792, ...,  0.16725197,  0.10088076, -0.06183652],
            [ 0.35695776,  0.30499873,  0.400652  , ...,  0.20334958,  0.37474275, -0.19292705],
            [ 0.6206475 ,  0.50192136,  0.602711  , ..., -0.03119299,  1.1860386 , -0.6167787 ]], dtype=float32)
-
 
 Embedding algorithms based on deep neural networks are almost universally considered to be stronger than traditional dimensionality reduction methods. These embeddings are being used more and more frequently in the industry in a variety of applications, e.g. content recommendation, question-answering, chatbots, etc. As we'll see later, using embeddings to represent images and text _within_ neural networks has also become increasingly popular in recent years.
 
@@ -175,11 +174,11 @@ If this post was helpful for you, please consider following me on [Twitter](http
 
 ---
 
-[^1]: Adapted from [D2L.ai](https://github.com/d2l-ai/d2l-en){:target="\_blank"}. [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/){:target="\_blank"} license.
+[^1]: <sub>Adapted from [D2L.ai](https://github.com/d2l-ai/d2l-en){:target="\_blank"}. [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/){:target="\_blank"} license.</sub>
 
-[^2]: Input reconstruction is a fairly complex problem. For example, generating embeddings that preserve face details in an input photo is a desireable feature, but a "generic" autoencoder would have trouble doing so.
+[^2]: <sub>Input reconstruction is a fairly complex problem. For example, generating embeddings that preserve face details in an input photo is a desireable feature, but a "generic" autoencoder would have trouble doing so.</sub>
 
-[^3]: Patches or crops of whole images do techically have context as well. Algorithms and models which understand context are crucial to the subfield of computer vision/graphics known as _inpainting_. Pre-training techniques for computer vision appliations hasn't been as successful, but it will likely become more viable in the near future. [This 2021 paper](https://arxiv.org/abs/2111.06377){:target="\_blank"} shows how masking patches in an autoencoder can be used for pre-training vision transformers.
+[^3]: <sub>Patches or crops of whole images do techically have context as well. Algorithms and models which understand context are crucial to the subfield of computer vision/graphics known as _inpainting_. Pre-training techniques for computer vision appliations hasn't been as successful, but it will likely become more viable in the near future. [This 2021 paper](https://arxiv.org/abs/2111.06377){:target="\_blank"} shows how masking patches in an autoencoder can be used for pre-training vision transformers.</sub>
 
 
 <script src="https://d3js.org/d3.v6.js"></script>
