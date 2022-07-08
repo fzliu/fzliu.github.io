@@ -4,7 +4,7 @@ Presser of computer buttons currently working on the [Towhee](https://github.com
 
 Welcome to my blog!
 
-{% include supporting-me.md %}
+<!--{% include supporting-me.md %}-->
 
 ---
 
