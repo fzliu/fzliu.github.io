@@ -5,6 +5,7 @@ description: "An introduction to the vector database: a new type of database pur
 categories: ["blog"]
 tags: machine-learning
 redirect_from: /2021/12/23/a_gentle_introduction_to_vector_databases.html
+canonical_url: https://zilliz.com/learn/what-is-vector-database
 ---
 
 _Update: An earlier version of this post was cross-published to the [Zilliz learning center](https://zilliz.com/learn), [Medium](https://milvusio.medium.com/what-are-vector-databases-8100178c5774), and [DZone](https://dzone.com/articles/what-are-vector-databases)._
