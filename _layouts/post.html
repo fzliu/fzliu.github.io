@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: base
 ---
 <link href="/css/override.css" rel="stylesheet" type="text/css">
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
@@ -23,8 +23,6 @@ layout: default
 
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
-    {% capture supporting-me %}{% include supporting-me.md %}{% endcapture %}
-    {{ supporting-me | markdownify }}
     {% include navlinks.html %}
   </div>
 
